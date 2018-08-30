@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { IPlace } from '../../data/places';
 
 @Component({
   selector: 'app-nav-panel',
@@ -8,8 +9,15 @@ import { Component, OnInit } from '@angular/core';
 export class NavPanelComponent implements OnInit {
 
   constructor() { }
+  @Input() public places: IPlace[];
+  public uniquePlaces: string[];
 
   ngOnInit() {
+    const placesTypes = this.places.map(place => place.type);
+
+    this.uniquePlaces = placesTypes.filter((val, index, self) => {
+      return self.indexOf(val) === index;
+    });
   }
 
 }

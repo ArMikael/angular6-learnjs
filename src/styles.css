@@ -78,7 +78,13 @@ h1 {
 .ele-strip ul li a{
   font-size:1em;
   color: #fff;
+  cursor: pointer;
 }
+
+.ele-strip ul li a:hover{
+  color: #313144;
+}
+
 /*--teddy-bear--*/
 .teddy-bear {
   text-align: center;
@@ -302,6 +308,10 @@ i.text-info{
    clear:both;
 }
 
+.filter-link {
+  text-transform: capitalize;
+}
+
 .place-card {
   padding: 12px 4px;
 }
@@ -309,6 +319,10 @@ i.text-info{
 .place-card:hover {
   background-color: gainsboro;
   cursor: pointer;
+}
+
+.ele-strip ul li:last-child {
+  border-right: none;
 }
 
 /*--meadia quries start here--*/
