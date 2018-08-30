@@ -34,14 +34,14 @@ const places: IPlace[] = [
     },
     social_info: {
       title: 'DanPanorama',
-      img: 'assets/images/b1.jpg',
+      img: 'assets/images/social1.jpg',
       followers: 2344,
       following: 240
     },
     type: 'hotel'
   },
   {
-    img: 'http://lorempixel.com/500/300/nature/3',
+    img: 'assets/images/herods.jpg',
     address: 'Herods Palace, Eilat, Israel',
     phone: 9725435435,
     weather: {
@@ -52,14 +52,14 @@ const places: IPlace[] = [
     },
     social_info: {
       title: 'HerodsPalace',
-      img: 'http://lorempixel.com/100/100/people/3/',
+      img: 'assets/images/social2.jpg',
       followers: 32424,
       following: 436
     },
     type: 'hotel'
   },
   {
-    img: 'http://lorempixel.com/500/300/nature/4',
+    img: 'assets/images/beach.jpg',
     address: 'Palmachim Beach',
     phone: 972111111,
     weather: {
@@ -70,14 +70,14 @@ const places: IPlace[] = [
     },
     social_info: {
       title: 'Palmachim',
-      img: 'http://lorempixel.com/100/100/people/4/',
+      img: 'assets/images/social-beach.jpg',
       followers: 23334,
       following: 111
     },
     type: 'beach'
   },
   {
-    img: 'http://lorempixel.com/500/300/nature/5',
+    img: 'assets/images/pub.jpg',
     address: 'Mike\'s Place, Jerusalem, Israel',
     phone: 9725435435,
     weather: {
@@ -88,7 +88,7 @@ const places: IPlace[] = [
     },
     social_info: {
       title: 'MikesPlace',
-      img: 'http://lorempixel.com/100/100/people/5/',
+      img: 'assets/images/social-pub.jpg',
       followers: 5423,
       following: 546
     },
