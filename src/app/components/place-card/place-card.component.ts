@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { IPlace } from '../../data/places';
 
 @Component({
   selector: 'app-place-card',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./place-card.component.css']
 })
 export class PlaceCardComponent implements OnInit {
+
+  @Input() public place: IPlace;
 
   constructor() { }
 

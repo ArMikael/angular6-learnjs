@@ -14,7 +14,7 @@
         <div class="activity_box">
           <div class="scrollbar" id="style-2">
             <div class="activity-row" *ngIf="places$ | async as places">
-              <app-place-card *ngFor="let place of places"></app-place-card>
+              <app-place-card *ngFor="let place of places" [place]="place"></app-place-card>
             </div>
           </div>
         </div>

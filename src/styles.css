@@ -265,7 +265,9 @@ i.text-info{
     display: inline-block;
 }
 .activity-img ul li img{
-    border-radius:50px;
+  border-radius:50px;
+  height: 50px;
+  width: 50px;
 }
 /*--village start here--*/
 .village {
