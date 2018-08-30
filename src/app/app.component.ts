@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IPlace } from './data/places';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular6-learnjs';
+  public selectedPlace: IPlace;
+
+  showPlaceDetails(place: IPlace): void {
+    this.selectedPlace = place;
+  }
+
 }

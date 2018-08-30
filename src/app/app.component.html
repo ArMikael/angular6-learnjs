@@ -1,27 +1,29 @@
 <h1>Hot Weather Widget</h1>
 <div class="element">
-  <app-places class="element-left"></app-places>
+  <app-places class="element-left" (activatedPlaceReceived)="showPlaceDetails($event)"></app-places>
 
   <div class="element-right">
     <div class="temperatur">
-      <h5>Et harum quidem</h5>
+      <h5>{{ selectedPlace.weather.title }}</h5>
       <span class="w-line"> </span>
       <span class="cloud"> </span>
-      <h2>14<sup class="degree">°</sup></h2>
-      <h6>Water 20<sup class="degree">°</sup></h6>
+      <h2>{{ selectedPlace.weather.temperature }}<sup class="degree">°</sup></h2>
+      <h6>Water {{ selectedPlace.weather.water }}<sup class="degree">°</sup></h6>
     </div>
     <div class="teddy-bear">
       <div class="teddy-text">
-        <h4>Nam libero voluptatem</h4>
+        <h4>{{ selectedPlace.social_info.title }}</h4>
         <span class="w-line"> </span>
-        <img src="assets/images/b1.jpg" alt=""  class="img-responsive">
+        <img [src]="selectedPlace.social_info.img" alt=""  class="img-responsive">
       </div>
       <div class="teddy-follow">
         <ul>
-          <li class="folw-h"><h3>2850</h3>
+          <li class="folw-h">
+            <h3>{{ selectedPlace.social_info.followers }}</h3>
             <p>Followers</p>
           </li>
-          <li><h3>675</h3>
+          <li>
+            <h3>{{ selectedPlace.social_info.following }}</h3>
             <p>Following</p>
           </li>
         </ul>

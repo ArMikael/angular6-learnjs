@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {Observable} from 'rxjs';
 
 import { IPlace, places$ } from '../../data/places';
@@ -15,6 +15,8 @@ export class PlacesComponent implements OnInit {
   public selectedFilter: string;
   public currentPlace: IPlace;
 
+  @Output() public activatedPlaceReceived: EventEmitter<IPlace> = new EventEmitter<IPlace>();
+
   constructor() { }
 
   ngOnInit() {
@@ -24,6 +26,9 @@ export class PlacesComponent implements OnInit {
       const placesTypes = places.map(place => place.type);
       this.currentPlace = places[0];
 
+      // Set default place for app bootstrap
+      this.activatedPlaceReceived.emit(this.currentPlace);
+
         this.uniquePlaces = placesTypes.filter((val, index, self) => {
         return self.indexOf(val) === index;
       });
@@ -32,6 +37,8 @@ export class PlacesComponent implements OnInit {
 
   showPlaceDetails(place) {
     this.currentPlace = place;
+    this.activatedPlaceReceived.emit(place);
+
     console.log('Place: ', place);
   }
 
