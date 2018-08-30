@@ -11,6 +11,7 @@ export class NavPanelComponent implements OnInit {
   constructor() { }
   @Input() public places: IPlace[];
   public uniquePlaces: string[];
+  public placesFilter: string;
 
   ngOnInit() {
     const placesTypes = this.places.map(place => place.type);
