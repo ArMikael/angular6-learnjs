@@ -1,12 +1,14 @@
-<div class="activity-desc">
-  <h5>Resort Address</h5>
-  <p>{{ place.address }}</p>
-  <h6>Tel:+ {{ place.phone }}</h6>
+<div class="place-card">
+  <div class="activity-desc">
+    <h5>Resort Address</h5>
+    <p>{{ place.address }}</p>
+    <h6>Tel:+ {{ place.phone }}</h6>
+  </div>
+  <div class="activity-img">
+    <ul>
+      <li><img [src]='place.img' alt=""/></li>
+      <li><img [src]='place.social_info.img' alt=""/></li>
+    </ul>
+  </div>
+  <div class="clear"></div>
 </div>
-<div class="activity-img">
-  <ul>
-    <li><img [src]='place.img' alt=""/></li>
-    <li><img [src]='place.social_info.img' alt=""/></li>
-  </ul>
-</div>
-<div class="clear"></div>

@@ -301,6 +301,16 @@ i.text-info{
 .clear{
    clear:both;
 }
+
+.place-card {
+  padding: 12px 4px;
+}
+
+.place-card:hover {
+  background-color: gainsboro;
+  cursor: pointer;
+}
+
 /*--meadia quries start here--*/
 @media(max-width:1600px){
 .temperatur {
