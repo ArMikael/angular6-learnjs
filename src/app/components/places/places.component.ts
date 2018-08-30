@@ -13,6 +13,7 @@ export class PlacesComponent implements OnInit {
   public places$: Observable<IPlace[]> = places$;
   public uniquePlaces: string[];
   public selectedFilter: string;
+  public currentPlace: IPlace;
 
   constructor() { }
 
@@ -21,11 +22,17 @@ export class PlacesComponent implements OnInit {
 
     this.places$.subscribe((places: IPlace[]) => {
       const placesTypes = places.map(place => place.type);
+      this.currentPlace = places[0];
 
-      this.uniquePlaces = placesTypes.filter((val, index, self) => {
+        this.uniquePlaces = placesTypes.filter((val, index, self) => {
         return self.indexOf(val) === index;
       });
     });
+  }
+
+  showPlaceDetails(place) {
+    this.currentPlace = place;
+    console.log('Place: ', place);
   }
 
 }

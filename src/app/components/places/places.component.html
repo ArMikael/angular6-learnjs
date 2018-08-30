@@ -1,5 +1,5 @@
 <div class="element-bg-img">
-  <img src="assets/images/1.jpg" alt="" class="img-responsive">
+  <img [src]="currentPlace.img" alt="" class="img-responsive">
 </div>
 <div class="element-left-bottom" *ngIf="places$ | async as places">
 
@@ -24,7 +24,9 @@
     <div class="activity_box">
       <div class="scrollbar" id="style-2">
         <div class="activity-row">
-          <app-place-card *ngFor="let place of places | placesFilter:selectedFilter" [place]="place"></app-place-card>
+          <app-place-card *ngFor="let place of places | placesFilter:selectedFilter"
+                          [place]="place" (placeActivated)="showPlaceDetails($event)">
+          </app-place-card>
         </div>
       </div>
     </div>

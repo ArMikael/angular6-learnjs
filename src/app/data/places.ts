@@ -98,6 +98,5 @@ const places: IPlace[] = [
 
 export const places$: Observable<IPlace[]> = of(places)
   .pipe(
-    map((placesArr: IPlace[]) => placesArr.filter((place: IPlace) => place.img)),
-    delay(1000)
+    map((placesArr: IPlace[]) => placesArr.filter((place: IPlace) => place.img))
   );

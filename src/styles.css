@@ -137,6 +137,7 @@ span.w-line {
   border-right: 1px solid #000;
 }
 .element-bg-img img {
+  width: 100%;
   border-radius: 6px 6px 0px 0px;
 }
 span.cloud {

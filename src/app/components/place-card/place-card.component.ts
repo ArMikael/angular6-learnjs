@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { IPlace } from '../../data/places';
 
 @Component({
@@ -9,15 +9,16 @@ import { IPlace } from '../../data/places';
 export class PlaceCardComponent implements OnInit {
 
   @Input() public place: IPlace;
-  @Output() public selectedPlace: IPlace;
+  @Output() public placeActivated: EventEmitter<IPlace> = new EventEmitter<IPlace>();
 
   constructor() { }
 
   ngOnInit() {
+
   }
 
-  getPlaceDetails() {
-
+  getPlaceDetails(place: IPlace) {
+    this.placeActivated.emit(place);
   }
 
 }
