@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import {Observable} from 'rxjs';
+
+import { IPlace, places$ } from './data/places';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +10,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular6-learnjs';
+
+  public places$: Observable<IPlace[]> = places$;
 }
