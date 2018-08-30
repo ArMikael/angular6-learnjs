@@ -15,7 +15,7 @@ export class PlacesComponent implements OnInit {
   public selectedFilter: string;
   public currentPlace: IPlace;
 
-  @Output() public activatedPlaceReceived: EventEmitter<IPlace> = new EventEmitter<IPlace>();
+  @Output() public activatedPlaceReceived: EventEmitter<IPlace> = new EventEmitter();
 
   constructor() { }
 

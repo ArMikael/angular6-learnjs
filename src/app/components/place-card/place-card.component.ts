@@ -9,7 +9,7 @@ import { IPlace } from '../../data/places';
 export class PlaceCardComponent implements OnInit {
 
   @Input() public place: IPlace;
-  @Output() public placeActivated: EventEmitter<IPlace> = new EventEmitter<IPlace>();
+  @Output() public placeActivated: EventEmitter<IPlace> = new EventEmitter();
 
   constructor() { }
 
