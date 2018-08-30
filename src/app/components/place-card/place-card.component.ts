@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 import { IPlace } from '../../data/places';
 
 @Component({
@@ -9,10 +9,15 @@ import { IPlace } from '../../data/places';
 export class PlaceCardComponent implements OnInit {
 
   @Input() public place: IPlace;
+  @Output() public selectedPlace: IPlace;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  getPlaceDetails() {
+
   }
 
 }
