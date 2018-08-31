@@ -23,13 +23,14 @@ export class PlacesComponent implements OnInit {
     this.selectedFilter = '';
 
     this.places$.subscribe((places: IPlace[]) => {
+      // Creating array of places for filters panel
       const placesTypes = places.map(place => place.type);
       this.currentPlace = places[0];
 
       // Set default place for app bootstrap
       this.activatedPlaceReceived.emit(this.currentPlace);
 
-        this.uniquePlaces = placesTypes.filter((val, index, self) => {
+      this.uniquePlaces = placesTypes.filter((val, index, self) => {
         return self.indexOf(val) === index;
       });
     });
@@ -38,8 +39,6 @@ export class PlacesComponent implements OnInit {
   showPlaceDetails(place) {
     this.currentPlace = place;
     this.activatedPlaceReceived.emit(place);
-
-    console.log('Place: ', place);
   }
 
 }
