@@ -7,8 +7,12 @@
       <h5>{{ selectedPlace.weather.title }}</h5>
       <span class="w-line"> </span>
       <span class="cloud"> </span>
-      <h2>{{ selectedPlace.weather.temperature }}<sup class="degree">°</sup></h2>
-      <h6>Water {{ selectedPlace.weather.water }}<sup class="degree">°</sup></h6>
+      <h2 [appTemperatureConversion]="selectedPlace.weather.temperature">
+        {{ selectedPlace.weather.temperature }}<sup class="degree">°</sup>
+      </h2>
+      <h6>
+        Water {{ selectedPlace.weather.water }}<sup class="degree">°</sup>
+      </h6>
     </div>
     <div class="teddy-bear">
       <div class="teddy-text">
