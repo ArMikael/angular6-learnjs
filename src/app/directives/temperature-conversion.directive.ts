@@ -10,7 +10,7 @@ export class TemperatureConversionDirective implements OnInit {
     if (!temperature) { return; }
     
     const fahrenheit = parseInt(temperature) * 1.8 + 32;
-    this._temperatureContext.textContent = fahrenheit.toString();
+    this._temperatureContext.textContent = fahrenheit.toString() + ' °F';
   }
 
   private _temperatureContext: HTMLSpanElement = this._renderer.createElement('span');

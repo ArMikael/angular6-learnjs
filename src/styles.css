@@ -326,6 +326,11 @@ i.text-info{
   border-right: none;
 }
 
+.fahrenheit-tooltip {
+  font-size: 14px;
+}
+
+
 /*--meadia quries start here--*/
 @media(max-width:1600px){
 .temperatur {
