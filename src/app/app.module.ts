@@ -6,6 +6,7 @@ import { PlaceCardComponent } from './components/place-card/place-card.component
 import { PlacesComponent } from './components/places/places.component';
 import { PlacesFilterPipe } from './pipes/places-filter.pipe';
 import { TemperatureConversionDirective } from './directives/temperature-conversion.directive';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
