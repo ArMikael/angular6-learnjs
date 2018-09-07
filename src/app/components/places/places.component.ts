@@ -1,7 +1,9 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import {Observable} from 'rxjs';
+import { Observable } from 'rxjs';
 
-import { IPlace, places$ } from '../../data/places';
+import { IPlace } from '../../data/places';
+import { GetPlacesPending } from "../../store/actions/places.action";
+import { Store } from "@ngrx/store";
 
 @Component({
   selector: 'app-places',
@@ -10,18 +12,22 @@ import { IPlace, places$ } from '../../data/places';
 })
 export class PlacesComponent implements OnInit {
 
-  public places$: Observable<IPlace[]> = places$;
+  public places$: Observable<IPlace[]>;
   public uniquePlaces: string[];
   public selectedFilter: string;
   public currentPlace: IPlace;
 
   @Output() public activatedPlaceReceived: EventEmitter<IPlace> = new EventEmitter();
 
-  constructor() { }
+  constructor(private _store: Store<any>) {
+  }
 
   ngOnInit() {
     this.selectedFilter = '';
 
+    this._store.dispatch(new GetPlacesPending());
+    this.places$ = this._store.select('places');
+    
     this.places$.subscribe((places: IPlace[]) => {
       // Creating array of places for filters panel
       const placesTypes = places.map(place => place.type);
