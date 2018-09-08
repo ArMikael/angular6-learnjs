@@ -24,7 +24,7 @@ export class PlacesEffects {
     switchMap(() =>
       this._http.get('assets/data/places.json')
         .pipe(
-          map((res: { data: IPlace[] }) => new GetPlacesSuccess(res)),
+          map((res: IPlace[]) => new GetPlacesSuccess(res)),
           catchError((err) => of(new GetPlacesError(err)))
         )
     )
