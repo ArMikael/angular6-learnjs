@@ -1,8 +1,8 @@
-<div class="element-bg-img">
+<div class="element-bg-img" *ngIf="currentPlace">
   <img [src]="currentPlace.img" alt="" class="img-responsive">
 </div>
-<div class="element-left-bottom" *ngIf="places$ | async as places">
 
+<div class="element-left-bottom" *ngIf="places$ | async as places">
   <div class="ele-strip">
     <ul>
       <li>

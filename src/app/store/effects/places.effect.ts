@@ -22,9 +22,9 @@ export class PlacesEffects {
   places$: Observable<Action> = this.actions$.pipe(
     ofType(GET_PLACES_PENDING),
     switchMap(() =>
-      this._http.get(`../../data/places.json`)
+      this._http.get('assets/data/places.json')
         .pipe(
-          map((res: { data: IPlace[] }) => new GetPlacesSuccess(res.data)),
+          map((res: { data: IPlace[] }) => new GetPlacesSuccess(res)),
           catchError((err) => of(new GetPlacesError(err)))
         )
     )

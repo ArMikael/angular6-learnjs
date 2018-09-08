@@ -2,7 +2,7 @@
 <div class="element">
   <app-places class="element-left" (activatedPlaceReceived)="showPlaceDetails($event)"></app-places>
 
-  <div class="element-right">
+  <div class="element-right" *ngIf="selectedPlace">
     <div class="temperatur">
       <h5>{{ selectedPlace.weather.title }}</h5>
       <span class="w-line"> </span>
